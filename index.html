@@ -55,7 +55,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="SinhVienLabel">Thêm Sinh Viên</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clearForm()"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        onclick="clearForm()"></button>
                 </div>
                 <div class="modal-body">
                     <form id="frmSinhVien">
@@ -63,23 +64,29 @@
                             <div class="col-6">
                                 <p>Mã sinh viên</p>
                                 <input class="form-control" id="ID" />
+                                <p id="error-required-ID-SinhVien" class="text text-danger"></p>
+                                <p id="error-length-ID-SinhVien" class="text text-danger"></p>
+                                <p id="error-checked-ID-SinhVien" class="text text-danger"></p>
 
                             </div>
                             <div class="col-6">
                                 <p>Tên sinh viên</p>
                                 <input class="form-control" id="hoTen" />
-
+                                <p id="error-required-hoTen-SinhVien" class="text text-danger"></p>
+                                <p id="error-regex-hoTen-SinhVien" class="text text-danger"></p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
                                 <p>email</p>
                                 <input class="form-control" id="email" />
-
+                                <p id="error-required-email-SinhVien" class="text text-danger"></p>
+                                <p id="error-regex-email-SinhVien" class="text text-danger"></p>
                             </div>
                             <div class="col-6">
                                 <p>Địa Chỉ</p>
                                 <input class="form-control" id="diaChi" />
+                                <p id="error-required-diaChi-SinhVien" class="text text-danger"></p>
 
                             </div>
                         </div>
@@ -87,20 +94,30 @@
                             <div class="col-4">
                                 <p>Điểm toán</p>
                                 <input class="form-control" id="Toan" />
+                                <p id="error-required-Toan-SinhVien" class="text text-danger"></p>
+                                <p id="error-regex-Toan-SinhVien" class="text text-danger"></p>
+                                <p id="error-length-Toan-SinhVien" class="text text-danger"></p>
                             </div>
                             <div class="col-4">
                                 <p>Điểm lý</p>
                                 <input class="form-control" id="Ly" />
+                                <p id="error-required-Ly-SinhVien" class="text text-danger"></p>
+                                <p id="error-regex-Ly-SinhVien" class="text text-danger"></p>
+                                <p id="error-length-Ly-SinhVien" class="text text-danger"></p>
                             </div>
                             <div class="col-4">
                                 <p>Điểm hoá</p>
                                 <input class="form-control" id="Hoa" />
+                                <p id="error-required-Hoa-SinhVien" class="text text-danger"></p>
+                                <p id="error-regex-Hoa-SinhVien" class="text text-danger"></p>
+                                <p id="error-length-Hoa-SinhVien" class="text text-danger"></p>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  onclick="clearForm()">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        onclick="clearForm()">Close</button>
                     <button class="btn btn-success" id="btnThemSinhVien" onclick="themPerson()">Thêm sinh viên</button>
                     <button id="btnLuuSinhVien" class="btn btn-success" type="button">Lưu sinh viên</button>
                 </div>
@@ -115,7 +132,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="EmployeeLabel">Thêm Nhân Viên</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clearForm()"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        onclick="clearForm()"></button>
                 </div>
                 <div class="modal-body">
                     <form id="frmNhanVien">
@@ -123,41 +141,51 @@
                             <div class="col-6">
                                 <p>Mã Nhân Viên</p>
                                 <input class="form-control" id="ID" />
-
+                                <p id="error-required-ID-NhanVien" class="text text-danger"></p>
+                                <p id="error-length-ID-NhanVien" class="text text-danger"></p>
+                                <p id="error-checked-ID-NhanVien" class="text text-danger"></p>
                             </div>
                             <div class="col-6">
                                 <p>Tên Nhân Viên</p>
                                 <input class="form-control" id="hoTen" />
-
+                                <p id="error-required-hoTen-NhanVien" class="text text-danger"></p>
+                                <p id="error-regex-hoTen-NhanVien" class="text text-danger"></p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
                                 <p>email</p>
                                 <input class="form-control" id="email" />
-
+                                <p id="error-required-email-NhanVien" class="text text-danger"></p>
+                                <p id="error-regex-email-NhanVien" class="text text-danger"></p>
                             </div>
                             <div class="col-6">
                                 <p>Địa Chỉ</p>
                                 <input class="form-control" id="diaChi" />
-
+                                <p id="error-required-diaChi-NhanVien" class="text text-danger"></p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
                                 <p>Ngày Làm Việc</p>
                                 <input class="form-control" id="ngayLamViec" />
-
+                                <p id="error-required-ngayLamViec-NhanVien" class="text text-danger"></p>
+                                <p id="error-regex-ngayLamViec-NhanVien" class="text text-danger"></p>
+                                <p id="error-length-ngayLamViec-NhanVien" class="text text-danger"></p>
                             </div>
                             <div class="col-6">
                                 <p>Lương Ngày</p>
                                 <input class="form-control" id="luongNgay" />
+                                <p id="error-required-luongNgay-NhanVien" class="text text-danger"></p>
+                                <p id="error-regex-luongNgay-NhanVien" class="text text-danger"></p>
+                                <p id="error-length-luongNgay-NhanVien" class="text text-danger"></p>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  onclick="clearForm()">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        onclick="clearForm()">Close</button>
                     <button class="btn btn-success" id="btnThemNhanVien" onclick="themPerson()">Thêm Nhân Viên</button>
                     <button id="btnLuuNhanVien" class="btn btn-success" type="button">Lưu Nhân Viên</button>
                 </div>
@@ -173,7 +201,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="CustomerLabel">Thêm Khách Hàng</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clearForm()"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        onclick="clearForm()"></button>
                 </div>
                 <div class="modal-body">
                     <form id="frmKhachHang">
@@ -181,35 +210,42 @@
                             <div class="col-6">
                                 <p>Mã Khách Hàng</p>
                                 <input class="form-control" id="ID" />
-
+                                <p id="error-required-ID-KhachHang" class="text text-danger"></p>
+                                <p id="error-length-ID-KhachHang" class="text text-danger"></p>
+                                <p id="error-checked-ID-KhachHang" class="text text-danger"></p>
                             </div>
                             <div class="col-6">
                                 <p>Tên Khách Hàng</p>
                                 <input class="form-control" id="hoTen" />
-
+                                <p id="error-required-hoTen-KhachHang" class="text text-danger"></p>
+                                <p id="error-regex-hoTen-KhachHang" class="text text-danger"></p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
                                 <p>email</p>
                                 <input class="form-control" id="email" />
-
-                            </div>
+                                <p id="error-required-email-KhachHang" class="text text-danger"></p>
+                                <p id="error-regex-email-KhachHang" class="text text-danger"></p>
+                            </div>  
                             <div class="col-6">
                                 <p>Địa Chỉ</p>
                                 <input class="form-control" id="diaChi" />
-
+                                <p id="error-required-diaChi-KhachHang" class="text text-danger"></p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
                                 <p>Tên Công Ty</p>
                                 <input class="form-control" id="tenCongTy" />
-
+                                <p id="error-required-tenCongTy-KhachHang" class="text text-danger"></p>
                             </div>
                             <div class="col-6">
                                 <p>Giá Trị Hóa Đơn</p>
                                 <input class="form-control" id="hoaDon" />
+                                <p id="error-required-hoaDon-KhachHang" class="text text-danger"></p>
+                                <p id="error-regex-hoaDon-KhachHang" class="text text-danger"></p>
+                                <p id="error-length-hoaDon-KhachHang" class="text text-danger"></p>
                             </div>
                         </div>
 
@@ -217,13 +253,14 @@
                             <div class="col-12">
                                 <p>Đánh Giá</p>
                                 <textarea class="form-control" id="danhGia"></textarea>
-
+                                <p id="error-required-danhGia-KhachHang" class="text text-danger"></p>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearForm()">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        onclick="clearForm()">Close</button>
                     <button class="btn btn-success" id="btnThemKhachHang" onclick="themPerson()">Thêm Khách
                         Hàng</button>
                     <button id="btnLuuKhachHang" class="btn btn-success" type="button">Lưu Khách Hàng</button>
@@ -235,11 +272,19 @@
     <!-- Table -->
     <div class="container">
         <h1 class="my-3">Danh Sách</h1>
+        <label for="LoaiDS">Chọn Loại Thành Viên:</label>
+
+        <select id="LoaiDS">
+            <option value="all" selected>All</option>
+            <option value="Sinh Viên">Sinh Viên</option>
+            <option value="Nhân Viên">Nhân Viên</option>
+            <option value="Khách Hàng">Khách Hàng</option>
+        </select>
         <table class="table">
             <thead>
                 <th>Loại</th>
                 <th>ID</th>
-                <th>Họ Tên</th>
+                <th id="hoTen" order="asc" onclick="sapXep(this, 'alias')" style="cursor: pointer;">Họ Tên</th>
                 <th>Địa Chỉ</th>
                 <th>Email</th>
                 <th>Điểm trung Bình</th>
@@ -252,7 +297,7 @@
             </tbody>
         </table>
 
-        
+
     </div>
 
 
@@ -268,20 +313,23 @@
 
     <!-- ------------------------------------------------------------------------------ -->
 
-
-
+    <!-- lodash -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+        integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- JS bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <!-- JS -->
-
+    <script src="./util/methods.js"></script>
+    <script src="./util/Validation.js"></script>
     <script type="module" src="./controlers/index.js">
 
     </script>
-    
-    
+
+  
 </body>
 
 </html>

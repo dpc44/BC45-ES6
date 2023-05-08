@@ -24,12 +24,12 @@ export class ListPerson {
         let sinhvien = new SinhVien();
         let nhanvien = new NhanVien();
         let khachhang = new KhachHang();
-        
+
         let trPerson = '';
         for (let person of mangPerson) {
-            let personMoi = {...sinhvien, ...nhanvien, ...khachhang};
+            let personMoi = { ...sinhvien, ...nhanvien, ...khachhang };
             personMoi = { ...personMoi, ...person };
-            console.log(personMoi);
+            // console.log(personMoi);
             trPerson += `
             <tr>
                 <td>${personMoi.Loai}</td>
@@ -46,24 +46,46 @@ export class ListPerson {
             </tr>   
             `
         }
-        
+
         document.querySelector(selector).innerHTML = trPerson;
         return trPerson;
     }
-    xoaPerson(maID){
+    xoaPerson(maID) {
         console.log('xoa');
         let indexDel = this.mangPerson.findIndex(pro => maID == pro.ID);
         console.log(indexDel);
         if (indexDel !== -1) {
             console.log(this.mangPerson);
             this.mangPerson.splice(indexDel, 1);
-            
+
             return true;
         }
         return false;
     }
-    laythongtinh(maID){
+    laythongtinh(maID) {
         let mangMaID = this.mangPerson.find(pro => maID == pro.ID)
         return mangMaID;
+    }
+
+    capNhatThongTin(thongTinMoi) {
+        let thongTinCapNhat = this.laythongtinh(thongTinMoi.ID);
+        if (thongTinCapNhat) {
+            for (let key in thongTinCapNhat) {
+                thongTinCapNhat[key] = thongTinMoi[key];
+            }
+            return true;
+        }
+        return false;
+    }
+
+    LoaiDS(tukhoa) {
+        tukhoa = stringToSlug(tukhoa);
+        let newArray = [];
+        for (let person of this.mangPerson) {
+            if (stringToSlug(person.Loai).trim().search(tukhoa) == 0) {
+                newArray.push(person);
+            }
+        }
+        return newArray;
     }
 }
