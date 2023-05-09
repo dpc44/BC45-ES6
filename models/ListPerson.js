@@ -88,4 +88,22 @@ export class ListPerson {
         }
         return newArray;
     }
+
+    renderLuuLoaiPerson(tukhoa){
+        
+        
+        let arrRender = this.LoaiDS(tukhoa);
+        if(arrRender.length == 0){
+            this.renderDanhSach('#tbodyPerson', this.mangPerson);
+            this.luuPerson();
+        }else{
+            this.renderDanhSach('#tbodyPerson', arrRender);
+            this.luuPerson();
+        }
+    
+        
+        
+    }
+    
+    
 }

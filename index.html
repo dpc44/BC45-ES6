@@ -119,7 +119,7 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                         onclick="clearForm()">Close</button>
                     <button class="btn btn-success" id="btnThemSinhVien" onclick="themPerson()">Thêm sinh viên</button>
-                    <button id="btnLuuSinhVien" class="btn btn-success" type="button">Lưu sinh viên</button>
+                    <button id="btnLuuSinhVien" class="btn btn-success" type="button" style="visibility:hidden">Lưu sinh viên</button>
                 </div>
             </div>
         </div>
@@ -187,7 +187,7 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                         onclick="clearForm()">Close</button>
                     <button class="btn btn-success" id="btnThemNhanVien" onclick="themPerson()">Thêm Nhân Viên</button>
-                    <button id="btnLuuNhanVien" class="btn btn-success" type="button">Lưu Nhân Viên</button>
+                    <button id="btnLuuNhanVien" class="btn btn-success" type="button" style="visibility:hidden">Lưu Nhân Viên</button>
                 </div>
             </div>
         </div>
@@ -263,7 +263,7 @@
                         onclick="clearForm()">Close</button>
                     <button class="btn btn-success" id="btnThemKhachHang" onclick="themPerson()">Thêm Khách
                         Hàng</button>
-                    <button id="btnLuuKhachHang" class="btn btn-success" type="button">Lưu Khách Hàng</button>
+                    <button id="btnLuuKhachHang" class="btn btn-success" type="button" style="visibility:hidden">Lưu Khách Hàng</button>
                 </div>
             </div>
         </div>
@@ -328,7 +328,11 @@
     <script type="module" src="./controlers/index.js">
 
     </script>
-
+    <!-- <style>
+        .modal-footer button:nth-child(3) {
+            background-color: red !important;
+        }
+    </style> -->
   
 </body>
 

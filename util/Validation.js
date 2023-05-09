@@ -1,3 +1,5 @@
+
+
 function kiemTraID(value,name,person,array){
 
     let test = array.find(ele => ele[name].toUpperCase()== value.toUpperCase());

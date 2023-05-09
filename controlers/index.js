@@ -3,6 +3,7 @@ import { SinhVien, NhanVien, KhachHang } from "../models/Person.js";
 let listPerson = new ListPerson();
 
 
+
 document.querySelector('#btnThemSinhVien').onclick = function (event) {
     let sinhVienMoi = new SinhVien();
     let arrInput = document.querySelectorAll('#frmSinhVien input, #frmSinhVien textarea');
@@ -19,11 +20,11 @@ document.querySelector('#btnThemSinhVien').onclick = function (event) {
     if (!validation) {
         return;
     }
+    
     listPerson.themPerson(sinhVienMoi);
-    // console.log(listPerson.mangPerson);
-    listPerson.renderDanhSach('#tbodyPerson', listPerson.mangPerson);
-    listPerson.luuPerson();
-
+    let tukhoa = document.querySelector('#LoaiDS').value;
+    listPerson.renderLuuLoaiPerson(tukhoa);
+    
     document.querySelector('#frmSinhVien').reset();
 }
 
@@ -48,10 +49,10 @@ document.querySelector('#btnThemNhanVien').onclick = function (event) {
         return;
     }
 
+    
     listPerson.themPerson(nhanVienMoi);
-
-    listPerson.renderDanhSach('#tbodyPerson', listPerson.mangPerson);
-    listPerson.luuPerson();
+    let tukhoa = document.querySelector('#LoaiDS').value;
+    listPerson.renderLuuLoaiPerson(tukhoa);
 
     document.querySelector('#frmNhanVien').reset();
 }
@@ -72,10 +73,10 @@ document.querySelector('#btnThemKhachHang').onclick = function (event) {
     if (!validation) {
         return;
     }
-    listPerson.themPerson(khachHangMoi);
 
-    listPerson.renderDanhSach('#tbodyPerson', listPerson.mangPerson);
-    listPerson.luuPerson();
+    listPerson.themPerson(khachHangMoi);
+    let tukhoa = document.querySelector('#LoaiDS').value;
+    listPerson.renderLuuLoaiPerson(tukhoa);
 
     document.querySelector('#frmKhachHang').reset();
 }
@@ -136,9 +137,7 @@ window.onload = () => {
 
 window.clearForm = () => {
     // console.log('hahah');
-    // document.getElementById('frmKhachHang').reset();
-    // document.getElementById('frmSinhVien').reset();
-    // document.getElementById('frmNhanVien').reset();
+
     let formArry = document.querySelectorAll('form');
     for (let i of formArry) {
         i.reset();
@@ -149,10 +148,14 @@ window.clearForm = () => {
     for (let i of IDarray) {
         i.disabled = false;
     }
-
-    document.getElementById("btnThemSinhVien").disabled = false;
-    document.getElementById("btnThemNhanVien").disabled = false;
-    document.getElementById("btnThemKhachHang").disabled = false;
+    let formSecondButton = document.querySelectorAll('.modal-footer button:nth-child(2)');
+    for(let i of formSecondButton){
+        i.disabled = false;
+    }
+    let formThirdButton = document.querySelectorAll('.modal-footer button:nth-child(3)');
+    for(let i of formThirdButton){
+        i.style.visibility='hidden';
+    }
 }
 
 window.xoaPerson = (maID) => {
@@ -169,6 +172,7 @@ window.chinhSua = (maID, loai) => {
     if (loai == 'Sinh Viên') {
         document.getElementById("btnThemSinhVien").disabled = true;
         document.querySelector('#themSV').click();
+        document.getElementById("btnLuuSinhVien").style.visibility='visible';
         if (personCanChinh) {
             let arrInput = document.querySelectorAll('#frmSinhVien input, #frmSinhVien textarea');
 
@@ -180,6 +184,7 @@ window.chinhSua = (maID, loai) => {
     } else if (loai == 'Nhân Viên') {
         document.getElementById("btnThemNhanVien").disabled = true;
         document.querySelector('#themNV').click();
+        document.getElementById("btnLuuNhanVien").style.visibility='visible';
         if (personCanChinh) {
             let arrInput = document.querySelectorAll('#frmNhanVien input, #frmNhanVien textarea');
 
@@ -191,6 +196,7 @@ window.chinhSua = (maID, loai) => {
     } else {
         document.getElementById("btnThemKhachHang").disabled = true;
         document.querySelector('#themKH').click();
+        document.getElementById("btnLuuKhachHang").style.visibility='visible';
         if (personCanChinh) {
             let arrInput = document.querySelectorAll('#frmKhachHang input, #frmKhachHang textarea');
 
@@ -205,6 +211,7 @@ window.chinhSua = (maID, loai) => {
 }
 
 document.querySelector('#btnLuuSinhVien').onclick = function () {
+
     let thongTinCapNhat = new SinhVien();
     let arrInput = document.querySelectorAll('#frmSinhVien input, #frmSinhVien textarea');
     for (let input of arrInput) {
