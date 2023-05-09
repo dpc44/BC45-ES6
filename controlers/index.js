@@ -110,7 +110,7 @@ function validationForm(value, id, person) {
             break;
         case "luongNgay":
             validation = kiemTraRong(value, id,person)&kiemTraSo(value,id,person) 
-            & kiemTraRange(value,id,person,0,10000000);
+            & kiemTraRange(value,id,person,0,1000000);
             break;
         case "tenCongTy":
             validation = kiemTraRong(value, id,person);
